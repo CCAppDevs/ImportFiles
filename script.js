@@ -8,7 +8,13 @@ import { sayHi, person, list, nums } from './library.js';
 let counts = {};
 
 for (let i = 0; i < nums.length; i++) {
-    counts[nums[i]] = counts[nums[i]] + 1;
+    let prev = 0;
+
+    if (counts[nums[i]] != undefined) {
+        prev = counts[nums[i]];
+    }
+
+    counts[nums[i]] = prev + 1;
 }
 
 console.log(counts);
